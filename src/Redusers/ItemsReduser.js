@@ -24,7 +24,7 @@ const initialState = [
 ]
 
 
-const reduser = (state = initialState, action) => {
+const listReduser = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ITEM: {
             const { ...text } = action.payload;
@@ -62,4 +62,4 @@ const reduser = (state = initialState, action) => {
     }
 }
 
-export default reduser;
+export default listReduser;

@@ -1,0 +1,65 @@
+.form-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-right: 20px;
+}
+
+.text {
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgb(249, 245, 245);
+}
+
+.text:focus, .filter:focus {
+    background-color: white;
+}
+
+.btn-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn, .btn-filter {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(79, 77, 77);
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.btn:hover, .btn-filter:hover, .btn-change:hover,
+.btn-delet:hover {
+    background-color: rgb(101, 100, 100);
+    border: none;
+}
+
+.save {
+    margin-right: 20px;
+}
+
+.form-filter {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    width: 500px;
+    margin-top: 15px;
+}
+
+.filter {
+    width: 400px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgb(249, 245, 245);
+}
+
+.btn-filter {
+ margin-left: 20px;
+}
