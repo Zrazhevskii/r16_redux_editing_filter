@@ -1,4 +1,4 @@
-import { ADD_ITEM } from '../actions/actionsName';
+import { ADD_ITEM, DELET_ITEM, UPDATE_ITEM } from '../actions/actionsName';
 
 const initialState = [
     {
@@ -21,38 +21,35 @@ const initialState = [
         action: 'Замена микрофона',
         price: 2500,
     },
-]
+];
 
-
-const listReduser = (state = initialState, action) => {
+const ItemsReduser = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ITEM: {
-            const { ...text } = action.payload;
+            const { actionField, priceField } = action.payload;
 
             return [
                 ...state,
                 {
                     id: crypto.randomUUID(),
-                    action: text.actionValue,
-                    price: parseInt(text.priseValue),
+                    action: actionField,
+                    price: priceField,
                 },
             ];
         }
-        case 'delet': {
+        case DELET_ITEM: {
             const id = action.payload;
             return state.filter((elem) => elem.id !== id);
         }
 
-        case 'update': {
-            const { ...text } = action.payload;
-            const { id, actionValue, priseValue } = text;
-
+        case UPDATE_ITEM: {
+            const { id, actionField, priceField } = action.payload;
             return state.map((elem) =>
                 elem.id === id
                     ? {
                           id: id,
-                          action: actionValue,
-                          price: priseValue,
+                          action: actionField,
+                          price: priceField,
                       }
                     : elem
             );
@@ -60,6 +57,6 @@ const listReduser = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
-export default listReduser;
+export default ItemsReduser;

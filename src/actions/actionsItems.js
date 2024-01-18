@@ -1,11 +1,17 @@
-import { ADD_ITEM, DELET_ITEM, FILTER_ITEM, UPDATE_ITEM } from './actionsName';
+import {
+    ADD_ITEM,
+    CHANGE_ACTION_PRISE,
+    CLEAR_FIELDS,
+    DELET_ITEM,
+    UPDATE_ITEM,
+    INSERTING_ITEM_INTO_FORM
+} from './actionsName';
 
-export const addItem = (id, actionValue, priseValue) => ({
+export const addItem = (actionField, priceField) => ({
     type: ADD_ITEM,
     payload: {
-        id: id,
-        action: actionValue,
-        price: priseValue,
+        actionField: actionField,
+        priceField: priceField,
     },
 });
 
@@ -14,16 +20,36 @@ export const deletItem = (id) => ({
     payload: id,
 });
 
-export const updateItem = (id, actionValue, priseValue) => ({
+export const updateItem = (id, actionField, priceField) => ({
     type: UPDATE_ITEM,
     payload: {
         id: id,
-        action: actionValue,
-        price: priseValue,
+        actionField: actionField,
+        priceField: priceField,
     },
 });
 
-export const filterItem = (text) => ({
-    type: FILTER_ITEM,
-    payload: text,
+export const changeForm = (name, value) => ({
+    type: CHANGE_ACTION_PRISE,
+    payload: {
+        name,
+        value,
+    },
+});
+
+export const insertingIntoForm = (id, actionValue, priseValue) => ({
+    type: INSERTING_ITEM_INTO_FORM,
+    payload: {
+        id,
+        actionField: actionValue,
+        priceField: priseValue,
+    }
 })
+
+export const clearField = () => ({
+    type: CLEAR_FIELDS,
+});
+
+// export const updateItem = () => {
+
+// }
