@@ -1,7 +1,13 @@
 import React from 'react';
+import { Filter } from './Filter';
 import { useSelector, useDispatch } from 'react-redux';
 import '../style/Form.css';
-import { addItem, changeForm, clearField, updateItem } from '../actions/actionsItems';
+import {
+    addItem,
+    changeForm,
+    clearField,
+    updateItem,
+} from '../actions/actionsItems';
 
 export const Form = () => {
     const formField = useSelector((state) => state.FormReducer);
@@ -12,27 +18,23 @@ export const Form = () => {
     const handleChange = (e) => {
         e.preventDefault();
 
-        const {
-            name,
-            value,
-        } = e.target
+        const { name, value } = e.target;
 
-        dispatch(changeForm(name, value))
-    }
+        dispatch(changeForm(name, value));
+    };
 
     const handleAddItem = (e) => {
         e.preventDefault();
 
         if (!id) {
-            dispatch(addItem(actionField, priceField))
-            dispatch(clearField())
+            dispatch(addItem(actionField, priceField));
+            dispatch(clearField());
             return;
         }
 
-        dispatch(updateItem(id, actionField, priceField))
-        dispatch(clearField())
-    }
-
+        dispatch(updateItem(id, actionField, priceField));
+        dispatch(clearField());
+    };
 
     return (
         <div>
@@ -63,19 +65,17 @@ export const Form = () => {
                         />
                     </div>
                     <div className='btn-box'>
-                        <button className='btn save' type='submit' onClick={handleAddItem}>Save</button>
+                        <button
+                            className='btn save'
+                            type='submit'
+                            onClick={handleAddItem}
+                        >
+                            Save
+                        </button>
                         <button className='btn cansel'>Cansel</button>
                     </div>
                 </div>
-                <div className='form-filter'>
-                    <input
-                        type='text'
-                        className='filter'
-                        placeholder='поиск по словам'
-                        name='valueFilter'
-                    />
-                    <button className='btn-filter'>Найти</button>
-                </div>
+                <Filter />
             </form>
         </div>
     );
