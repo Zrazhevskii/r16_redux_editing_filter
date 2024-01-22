@@ -1,4 +1,3 @@
-import React from 'react';
 import { Filter } from './Filter';
 import { useSelector, useDispatch } from 'react-redux';
 import '../style/Form.css';

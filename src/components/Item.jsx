@@ -1,20 +1,19 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deletItem, insertingIntoForm, updateItem } from '../actions/actionsItems';
+import { deletItem, insertingIntoForm } from '../actions/actionsItems';
+import PropTypes from 'prop-types';
 
 export const Item = ({ data }) => {
-    // const item = useSelector((state) => state.ItemsReducer);
     const dispatch = useDispatch();
 
     const { id, action, price } = data;
 
     const handleDeletItem = (id) => {
-        dispatch(deletItem(id))
+        dispatch(deletItem(id));
     };
 
     const handleUpdateItem = () => {
-        dispatch(insertingIntoForm(id, action, price))
-    }
+        dispatch(insertingIntoForm(id, action, price));
+    };
 
     return (
         <div className='item'>
@@ -33,3 +32,12 @@ export const Item = ({ data }) => {
         </div>
     );
 };
+
+Item.propTypes = {
+    data : PropTypes.shape({
+        id : PropTypes.string.isRequired,
+        action : PropTypes.string.isRequired,
+        price : PropTypes.number.isRequired,
+    }),
+    
+}

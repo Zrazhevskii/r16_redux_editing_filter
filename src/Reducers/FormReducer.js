@@ -21,7 +21,6 @@ const FormReducer = (state = initialState, action) => {
         }
 
         case INSERTING_ITEM_INTO_FORM: {
-            // console.log(action.payload);
             const { id, actionField, priceField } = action.payload;
 
             state = {

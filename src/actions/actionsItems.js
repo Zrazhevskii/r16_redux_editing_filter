@@ -4,7 +4,8 @@ import {
     CLEAR_FIELDS,
     DELET_ITEM,
     UPDATE_ITEM,
-    INSERTING_ITEM_INTO_FORM
+    INSERTING_ITEM_INTO_FORM,
+    CHANGE_FILTER_VALUE,
 } from './actionsName';
 
 export const addItem = (actionField, priceField) => ({
@@ -43,13 +44,17 @@ export const insertingIntoForm = (id, actionValue, priseValue) => ({
         id,
         actionField: actionValue,
         priceField: priseValue,
-    }
-})
+    },
+});
 
 export const clearField = () => ({
     type: CLEAR_FIELDS,
 });
 
-// export const updateItem = () => {
-
-// }
+export const filterChangeValue = (name, value) => ({
+    type: CHANGE_FILTER_VALUE,
+    payload: {
+        name,
+        value,
+    },
+});

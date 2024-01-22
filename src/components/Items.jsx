@@ -1,19 +1,25 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import '../style/items.css';
 import { Item } from './Item';
+import PropTypes from 'prop-types';
 
-export const Items = () => {
-    const items = useSelector((state) => state.ItemsReduser);
-    // const dispatch = useDispatch();
-
+export const Items = ({ props }) => {
     return (
         <div className='items-wrapper'>
             <ul className='item-list'>
-                {items.map((elem) => {
+                {props.map((elem) => {
                     return <Item data={elem} key={elem.id} />;
                 })}
             </ul>
         </div>
     );
 };
+
+Items.propTypes = {
+    props : PropTypes.shape({
+        id : PropTypes.string.isRequired,
+        action : PropTypes.string.isRequired,
+        prise : PropTypes.number.isRequired,
+    }),
+    map : PropTypes.func.isRequired
+    
+}

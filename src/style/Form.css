@@ -16,7 +16,8 @@
     background-color: rgb(249, 245, 245);
 }
 
-.text:focus, .filter:focus {
+.text:focus,
+.filter:focus {
     background-color: white;
 }
 
@@ -25,7 +26,8 @@
     align-items: flex-end;
 }
 
-.btn, .btn-filter {
+.btn,
+.btn-filter {
     width: 100px;
     height: 30px;
     background-color: rgb(79, 77, 77);
@@ -35,7 +37,9 @@
     vertical-align: middle;
 }
 
-.btn:hover, .btn-filter:hover, .btn-change:hover,
+.btn:hover,
+.btn-filter:hover,
+.btn-change:hover,
 .btn-delet:hover {
     background-color: rgb(101, 100, 100);
     border: none;
@@ -58,8 +62,4 @@
     height: 25px;
     border-radius: 5px;
     background-color: rgb(249, 245, 245);
-}
-
-.btn-filter {
- margin-left: 20px;
 }
