@@ -1,8 +1,21 @@
-# React + Vite
+# Редактирование
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект не предполагает взаимодействия по протоколу HTTP и наличия серверной части.
 
-Currently, two official plugins are available:
+Взяв за основу проект, рассмотренный на лекции, доработайте его либо напишите с нуля:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. По умолчанию показывается форма добавления, при заполнении и нажатии на кнопку Save происходит добавление элемента в список:
+
+![first-picture](https://github.com/Zrazhevskii/r16_redux_editing/blob/main/src/assets/add.png)
+
+2. При нажатии на кнопку «Редактировать» форма автоматически заполняется данными элемента:
+
+![second-picture](https://github.com/Zrazhevskii/r16_redux_editing/blob/main/src/assets/edit.png)
+
+Далее возможны два сценария:
+
+2.1 Если пользователь нажал на кнопку Save, запись в таблице обновляется.
+
+2.2 Если пользователь нажал на кнопку Cancel, то поля вычищаются и снова отображается форма добавления.
+
+Бонусное задание: подумайте, как должно вести себя приложение, если вы при редактировании записи, нажмёте на «Удалить» — крестик.
