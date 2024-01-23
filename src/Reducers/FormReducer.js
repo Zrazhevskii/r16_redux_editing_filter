@@ -33,7 +33,8 @@ const FormReducer = (state = initialState, action) => {
         }
 
         case CLEAR_FIELDS: {
-            return initialState;
+            state = initialState
+            return state;
         }
 
         default:

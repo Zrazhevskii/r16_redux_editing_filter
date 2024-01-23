@@ -35,6 +35,11 @@ export const Form = () => {
         dispatch(clearField());
     };
 
+    const handleClear = (e) => {
+        e.preventDefault();
+        dispatch(clearField());
+    };
+
     return (
         <div>
             <form action='' className='form-wrapper'>
@@ -71,11 +76,13 @@ export const Form = () => {
                         >
                             Save
                         </button>
-                        <button className='btn cansel'>Cansel</button>
+                        <button className='btn cansel' onClick={handleClear}>
+                            Cansel
+                        </button>
                     </div>
                 </div>
-                <Filter />
             </form>
+            <Filter />
         </div>
     );
 };

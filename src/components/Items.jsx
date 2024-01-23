@@ -15,11 +15,12 @@ export const Items = ({ props }) => {
 };
 
 Items.propTypes = {
-    props : PropTypes.shape({
-        id : PropTypes.string.isRequired,
-        action : PropTypes.string.isRequired,
-        prise : PropTypes.number.isRequired,
-    }),
-    map : PropTypes.func.isRequired
+    props : PropTypes.array,
     
+    // props : PropTypes.shape({
+    //     id : PropTypes.string.isRequired,
+    //     action : PropTypes.string.isRequired,
+    //     prise : PropTypes.number.isRequired,
+    // }),
+    map : PropTypes.func
 }

@@ -23,6 +23,8 @@ export const Filter = () => {
         dispatch(filterChangeValue(name, value));
     };
 
+    // console.log(items)
+
     return (
         <>
             <div className='form-filter'>
