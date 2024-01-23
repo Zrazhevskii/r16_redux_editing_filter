@@ -1,4 +1,4 @@
-import '../style/items.css';
+import '../style/Items.css';
 import { Item } from './Item';
 import PropTypes from 'prop-types';
 
@@ -16,11 +16,5 @@ export const Items = ({ props }) => {
 
 Items.propTypes = {
     props : PropTypes.array,
-    
-    // props : PropTypes.shape({
-    //     id : PropTypes.string.isRequired,
-    //     action : PropTypes.string.isRequired,
-    //     prise : PropTypes.number.isRequired,
-    // }),
     map : PropTypes.func
 }
